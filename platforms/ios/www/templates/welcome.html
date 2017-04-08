@@ -1,0 +1,78 @@
+<style>
+.wimage { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+h3 { 
+   position: absolute; 
+   top: 50px; 
+   left: 0; 
+   width: 100%; 
+}
+
+</style>
+<ion-view view-title="Welcome">
+  <ion-content>
+    <div class="wimage">
+      <img src="img/welcome.jpg" style="position:absolute;left: 0;right: 0;margin:0 auto;left:50%;transform:translateX(-50%);"/>
+      <!-- <h3 class="text-center" style="color:#ccc;" ng-if="loginData.token">Please select an option from the menu</h3>
+      <h3 class="text-center" style="color:#ccc;" ng-if="loginData.token==''">Please Log In from the menu options</h3> -->
+      <md-button class="md-raised md-primary log-in" ng-click="login();" ng-if="loginData.token==''">Log&nbsp;&nbsp;In</md-button>
+      <div class="firstrow" ng-if="loginData.token">
+        <div class="buttonstyle">
+
+          <md-button class="cellofrow" ng-click="first();" ng-if="loginData.token">
+            <ng-md-icon icon="add_alert" style="fill:#ffffff" size="70" class="menuicon"></ng-md-icon>
+          </md-button>
+          <p class="iconname">Alerts</p>
+
+        </div>
+        <div class="buttonstyle">
+
+          <md-button class="cellofrow" ng-click="second();" ng-if="loginData.token">
+            <ng-md-icon icon="import_contacts" style="fill:#ffffff" size="70" class="menuicon"></ng-md-icon>
+          </md-button>
+          <p class="iconname">Contacts</p>
+
+        </div>
+
+        <div class="buttonstyle">
+
+          <md-button class="cellofrow" ng-click="third();" ng-if="loginData.token">
+            <ng-md-icon icon="av_timer" style="fill:#ffffff" size="70" class="menuicon"></ng-md-icon>
+          </md-button>
+          <p class="iconname">Tasks</p>
+
+        </div>
+
+        <div class="buttonstyle">
+
+          <md-button class="cellofrow" ng-click="fourth();" ng-if="loginData.token">
+            <ng-md-icon icon="message" style="fill:#ffffff" size="70" class="menuicon"></ng-md-icon>
+          </md-button>
+          <p class="iconname">Message</p>
+
+        </div>
+        <div class="buttonstyle">
+
+          <md-button class="cellofrow" ng-click="fifth();" ng-if="loginData.token">
+            <ng-md-icon icon="event_seat" style="fill:#ffffff" size="70" class="menuicon"></ng-md-icon>
+          </md-button>
+          <p class="iconname">Open House</p>
+
+        </div>
+
+        <div class="buttonstyle">
+
+          <md-button menu-close class="cellofrow" ng-click="logout();" ng-if="loginData.token">
+            <ng-md-icon icon="logout" style="fill:#ffffff" size="70" class="menuicon"></ng-md-icon>
+          </md-button>
+          <p class="iconname">Log Out</p>
+
+        </div>
+        
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

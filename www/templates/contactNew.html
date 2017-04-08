@@ -1,0 +1,80 @@
+<ion-view view-title="New Contact">
+  <ion-content class="contact-background">
+  	
+	<div class="new-contact">
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Firstname (required)</label>
+			<ng-md-icon style="margin-top:3px; fill:#EB291E" icon="person" size="25"></ng-md-icon>
+			<input ng-model="contact.firstname" type="text" ng-required="true">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Lastname (required)</label>
+			<ng-md-icon style="margin-top:3px; fill:#F06F05" icon="person" size="25"></ng-md-icon>
+			<input ng-model="contact.lastname" type="text" ng-required="true">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Email (required)</label>
+			<ng-md-icon style="margin-top:3px; fill:#F7CC0A" icon="email" size="25"></ng-md-icon>
+			<input ng-model="contact.email" type="email" ng-required="true">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Alt. Email (required)</label>
+			<ng-md-icon style="margin-top:3px; fill:#2CC40E" icon="email" size="25"></ng-md-icon>
+			<input ng-model="contact.secondaryemail" type="email" ng-required="true">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Company</label>
+			<ng-md-icon style="margin-top:3px; fill:#0EC497" icon="account_balance" size="25"></ng-md-icon>
+			<input ng-model="contact.company" type="text">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Phone</label>
+			<ng-md-icon style="margin-top:3px; fill:#0E54C4" icon="phone" size="25"></ng-md-icon>
+			<input ng-model="contact.phone" type="text">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Office Phone</label>
+			<ng-md-icon style="margin-top:3px; fill:#320EC4" icon="work" size="25"></ng-md-icon>
+			<input ng-model="contact.officephone" type="text">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Home Phone</label>
+			<ng-md-icon style="margin-top:3px; fill:#B535E8" icon="home" size="25"></ng-md-icon>
+			<input ng-model="contact.homephone" type="text">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Birthday</label>
+			<ng-md-icon style="margin-top:3px; fill:#E835CD" icon="date_range" size="25"></ng-md-icon>
+			<input ng-model="contact.birthday" type="text">
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<!-- Use floating placeholder instead of label -->
+			<label style="margin-left:40px;">Anniversary</label>
+			<ng-md-icon style="margin-top:3px; fill:#E3093C" icon="local_florist" size="25"></ng-md-icon>
+			<input ng-model="contact.anniversary" type="text">
+		</md-input-container>
+
+	</div>
+	<md-button class="md-raised md-warn" style="width:60vw;margin-left:20vw;margin-bottom:20px;" ng-click="addContact(contact);">Add</md-button>
+	
+  </ion-content>
+</ion-view>

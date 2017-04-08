@@ -1,0 +1,17 @@
+<ion-view view-title="Comments"> 
+  <ion-content class="padding">
+	<ion-list>
+		<ion-item>
+			<strong>Select a visitor for your comment</strong>
+		</ion-item>
+		<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="visitor in visitors" type="item-text-wrap" href="#/tab/visitor-comment/{{visitor.id}}">
+			<img src="img/profile.png" width="30px" />
+			<div>{{visitor.firstname}} {{visitor.lastname}} <span ng-if="visitor.comments>0"> - {{visitor.comments}} {{visitor.comments==1 ? 'Comment' : 'Comments'}}</span></div>
+			<span am-time-ago="visitor.date"></span>
+		</ion-item>
+	</ion-list>    
+	  
+	<button class="button button-block button-stable"  ng-click="newComment();">Anonymous Comment</button>
+	
+  </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="primary">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+        <p class="badge badge-assertive">{{badge.alerts}}</p>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close href="#/app/welcome">
+          Welcome
+        </ion-item>
+        <ion-item menu-close ng-click="login()" ng-if="loginData.token==''">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/alerts" ng-if="loginData.token!=''">
+          Alerts
+          <p class="badge badge-assertive">{{badge.alerts}}</p>
+        </ion-item>
+        <ion-item menu-close href="#/app/contacts" ng-if="loginData.token!=''">
+          Contacts
+        </ion-item>
+        <ion-item menu-close href="#/app/tasks" ng-if="loginData.token!=''">
+          Tasks
+        </ion-item>
+        <ion-item menu-close href="#/app/text" ng-if="loginData.token!=''">
+          Text Messaging
+        </ion-item>
+        <ion-item menu-close href="#/tab/openhouse" ng-if="loginData.token!=''">
+          Open House
+        </ion-item>
+        <ion-item menu-close ng-click="logout()" ng-if="loginData.token!=''">
+          Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

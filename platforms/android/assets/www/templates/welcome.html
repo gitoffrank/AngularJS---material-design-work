@@ -1,0 +1,22 @@
+<style>
+.wimage { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+h3 { 
+   position: absolute; 
+   top: 50px; 
+   left: 0; 
+   width: 100%; 
+}
+</style>
+<ion-view view-title="Welcome">
+  <ion-content>
+    <div class="wimage">
+    <img src="img/welcome.jpg" style="position:absolute;left: 0;right: 0;margin:0 auto;left:50%;transform:translateX(-50%);"/>
+    <h3 class="text-center" style="color:#ccc;" ng-if="loginData.token">Please select an option from the menu</h3>
+    <h3 class="text-center" style="color:#ccc;" ng-if="loginData.token==''">Please Log In from the menu options</h3>
+    </div>
+  </ion-content>
+</ion-view>

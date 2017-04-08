@@ -1,0 +1,19 @@
+<ion-view view-title="Alerts">
+  <ion-content>
+  	<div class="item" ng-if="alerts.length==0">
+  		No Alerts Available
+  	</div>
+    <ion-list>
+      <ion-item ng-repeat="alert in alerts" class="item item-text-wrap item-icon-right" ng-click="doPayload(alert.payload)">
+        <h2 ng-if="alert.title">{{alert.title}}</h2>
+        <p>{{alert.message}}</p>
+        <p ng-if="alert.expires">Expires <span am-time-ago="alert.expires"></span></p>
+        <p ng-if="alert.date">Created <span am-time-ago="alert.date | amUtc | amLocal"></span></p>
+		    <i class="icon ion-chevron-right icon-accessory" ng-if="alert.payload['goTo']"></i>
+        <ion-option-button class="button-positive" ng-click="confirmAlert(alert, $index)" >
+          Confirm
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

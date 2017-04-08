@@ -1,0 +1,18 @@
+<ion-view view-title="Text:John, Dave">
+	<ion-content delegate-handle="messageScroll">
+		<div class="item" ng-repeat="msg in texts">
+			From: {{msg.name}}<br/>
+			Message: {{msg.message}}<br/>
+			<span am-time-ago="msg.timestamp | amUtc | amLocal"></span>
+		</div>
+	</ion-content>
+	<form name="sendMessageForm" ng-submit="submit();">
+	<ion-footer-bar keyboard-attach>
+		<label class="item item-input" style="width:100%">
+		<input type="text" placeholder="Message" ng-model="text.message" placeholder="Send a message..." minlength="1" maxlength="1500" >
+		<button type="submit" class="button button-positive" ng-disabled="!text.message || text.message === ''" >Send</button>
+		</label>
+	</ion-footer-bar>
+	</form>
+         
+</ion-view>

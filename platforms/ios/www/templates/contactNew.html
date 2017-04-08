@@ -1,0 +1,49 @@
+<ion-view view-title="New Contact">
+  <ion-content>
+	<div class="card">
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">First</span>
+			<input type="text" placeholder="firstname" name="firstname" ng-model="contact.firstname">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Last</span>
+			<input type="text" placeholder="lastname" name="lastname" ng-model="contact.lastname">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Email</span>
+			<input type="text" placeholder="email" name="email" ng-model="contact.email">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Alt. Email</span>
+			<input type="text" placeholder="alternate email" name="secondaryEmail" ng-model="contact.secondaryemail">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Company</span>
+			<input type="text" placeholder="company" name="company" ng-model="contact.company">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Phone</span>
+			<input type="text" placeholder="phone" name="phone" ng-model="contact.phone">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Office</span>
+			<input type="text" placeholder="officephone" name="officephone" ng-model="contact.officephone">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Home</span>
+			<input type="text" placeholder="homephone" name="homephone" ng-model="contact.homephone">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Birthday</span>
+			<input type="text" placeholder="birthday" name="birthday" ng-model="contact.birthday">
+		</li>
+		<li class="item item-input item-stacked-label">
+			<span class="input-label">Anniversary</span>
+			<input type="text" placeholder="anniversary" name="anniversary" ng-model="contact.anniversary">
+		</li>
+	</div>
+	<ion-button class="button button-block button-positive" ng-click="addContact(contact);">
+		Add
+	</ion-button>
+  </ion-content>
+</ion-view>

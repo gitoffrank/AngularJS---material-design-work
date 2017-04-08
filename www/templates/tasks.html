@@ -1,0 +1,35 @@
+<ion-view view-title="Tasks">
+  <ion-nav-buttons side="secondary">
+    <button class="button" ng-click="newTask();">New Task</button>
+  </ion-nav-buttons>
+  <form >
+  <div class="bar bar-subheader">
+    <label class="item-select item-input item-stacked-label">
+     <span class="input-label">Filter</span>
+     <select name="filter" ng-model="filter" ng-change="getTasks(filter);">
+        <option value="all">Tasks Due Now</option>
+        <option value="overdue">Overdue Tasks</option>
+        <option value="today">Current Tasks</option>
+        <option value="upcoming">Upcoming Tasks</option>
+        <option value="completed">Completed Tasks</option>
+      </select>
+    </label>
+  </div>
+  </form>
+  <ion-content class="has-subheader">
+    <ion-list>
+      <ion-item ng-repeat="task in tasks" class="item item-text-wrap" >
+        <h2>{{task.description}}</h2>
+        <p><a href="#/app/contacts/{{task.idcustomer}}">{{task.firstname}} {{task.lastname}}</a></p>
+        <p>{{task.notes}}</p>
+        <p>Due: {{task.duedate*1000 | date:'MM/dd/yyyy h:mma'}}</p>
+        <ion-option-button class="button-positive" ng-click="completeTask(task, $index)" >
+          Complete
+        </ion-option-button>
+        <ion-option-button class="button-assertive" ng-click="editTask(task, $index)" >
+          Edit
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

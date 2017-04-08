@@ -1,0 +1,43 @@
+<ion-modal-view>
+  <!-- <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar> -->
+  <ion-content class="background-login">
+    <div class="buttons">
+      <md-button class="close-btn" ng-click="closeLogin();">
+            <ng-md-icon icon="close" style="fill:#ffffff" size="30" class="close-icon"></ng-md-icon>
+      </md-button>
+    </div>
+    <form ng-submit="doLogin()">
+      <div class="list loginlist">
+
+        <md-input-container class="md-icon-float md-block username-container">
+        <!-- Use floating label instead of placeholder -->
+          <label style="margin-left:37px; color:white; font-size:18px">Username</label>
+          <ng-md-icon class="username" icon="person" style="fill:#ffffff" size="30"></ng-md-icon>
+          <input ng-model="loginData.username" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-icon-float md-block password-container">
+        <!-- Use floating label instead of placeholder -->
+          <label style="margin-left:37px; color:white; font-size:18px">Password</label>
+          <ng-md-icon class="username" icon="vpn_key" style="fill:#ffffff" size="30"></ng-md-icon>
+          <input ng-model="loginData.password" type="password">
+        </md-input-container>
+
+        <md-button class="md-raised md-primary submit-container" type="submit">Log&nbsp;&nbsp;In</md-button>
+
+        <!-- <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label> -->
+      </div>
+    </form>
+    <div class="text-center">
+    <label style="color:white;">No account yet?</label>
+    <a style="color:white; margin-left:5px;" href="" ng-click="goTo('https://www.liondesk.com/signup.html');">Create new one.</a></div>
+
+  </ion-content>
+</ion-modal-view>

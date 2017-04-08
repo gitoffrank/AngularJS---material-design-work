@@ -1,0 +1,85 @@
+<ion-view view-title="Contacts">
+  <ion-nav-buttons side="secondary">
+    
+
+  </ion-nav-buttons>
+
+ <!--  <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="addbutton" >
+          <ng-md-icon class="addicon" icon="menu" style="fill:white" size="30"></ng-md-icon>
+        </md-button>
+        <h2 class="md-flex">
+          <span>Contacts</span>
+        </h2>
+        <span flex></span>
+        <md-button class="addbutton" ng-click="newContact();">
+          <ng-md-icon class="addicon" icon="add_circle" style="fill:red" size="30"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar> -->
+
+  <form onSubmit="find();">
+  <div class="bar bar-subheader item-input-inset">
+
+    <md-input-container md-no-float class="md-block inputsearch">
+      <!-- Use floating label instead of placeholder -->
+      <ng-md-icon class="searchicon" icon="search" style="fill:grey" size="30"></ng-md-icon>
+      <input type="search" ng-model="search.keyword" class="inputsearch1" placeholder="Customer Name">
+    </md-input-container>
+  
+    <md-button class="md-raised md-warn findbutton" ng-click="find();">Find</md-button>
+   
+  </div>
+  </form>
+
+
+  <ion-content class="has-subheader">
+    <md-list>
+      <md-list-item ng-repeat="contact in contacts" href="#/app/contacts/{{contact.id}}" class="md-2-line">
+        <div class="md-list-item-text">
+            <h4>{{contact.firstname}} {{contact.lastname}}</h4>
+            <p>{{contact.email}}</p>
+        </div>
+        <md-button class="md-secondary md-icon-button" ng-click="editContact(contact, $index)">
+            <ng-md-icon class="" icon="chevron_right" style="fill:black" size="30"></ng-md-icon>
+        </md-button>
+      </md-list-item>
+    </md-list>
+    <ion-infinite-scroll ng-if="canLoadMore()" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+  <md-button class="addbutton" ng-click="newContact();">
+      <ng-md-icon class="addicon" icon="add_circle" style="fill:#ff4500" size="50"></ng-md-icon>
+    </md-button>
+</ion-view>
+
+
+<!-- <ion-view view-title="Contacts">
+  <ion-nav-buttons side="secondary">
+    <button class="button" ng-click="newContact();">New Contact</button>
+  </ion-nav-buttons>
+  <form onSubmit="find();">
+  <div class="bar bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" ng-model="search.keyword" placeholder="customer name">
+    </label>
+    <button class="button button-clear" ng-click="find();">
+      Find
+    </button>
+  </div>
+  </form>
+  <ion-content class="has-subheader">
+    <ion-list>
+      <ion-item ng-repeat="contact in contacts" href="#/app/contacts/{{contact.id}}" class="item item-text-wrap item-icon-right">
+        <h2>{{contact.firstname}} {{contact.lastname}}</h2>
+        <p>{{contact.email}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="editContact(contact, $index)" >
+          Edit
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll ng-if="canLoadMore()" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view> -->

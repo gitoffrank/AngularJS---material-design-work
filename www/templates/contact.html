@@ -1,0 +1,32 @@
+<ion-view view-title="Contact">
+  <ion-content>
+	<div class="card">
+	<div class="item">
+		<div class="contact-title" style="font-weight: bold; text-align: center">
+			Agent: {{contact.agentfirstname}} {{contact.agentlastname}}</div>
+		<div class="" ng-if="contact.assignedagentfirstname">Assigned: {{assignedagentfirstname}} {{assignedagentlastname}}</div>
+	</div>
+	<div class="item item-body accoutinfo">
+		<div class=""><p>Name:</p><strong>{{contact.firstname}} {{contact.lastname}}</strong></div>
+		<div class=""><p>Email:</p><a href="mailto:{{contact.email}}">{{contact.email}}</a></div>
+		<div class="" ng-if="contact.secondaryemail"><p>Alt. Email:</p><a href="mailto:{{contact.email}}">{{contact.secondaryemail}}</a></div>
+		<div class=""><p>Company:</p>{{contact.company}}</div>
+		<div class=""><p>Phone:</p><a href="tel:1{{contact.phone}}">{{contact.phone}}</a></div>
+		<div class="" ng-if="contact.officephone"><p>Office:</p><a href="tel:1{{contact.officephone}}">{{contact.officephone}}</a></div>
+		<div class="" ng-if="contact.homephone"><p>Home:</p><a href="tel:1{{contact.homephone}}">{{contact.homephone}}</a></div>
+		<div class="" ng-if="contact.birthday"><p>Birthday:</p>{{contact.birthday}}</div>
+	</div>
+	<div class="item" ng-if="contact.leadstatus || contact.contactsource || contact.lastcontactdate">
+		<div class="" ng-if="contact.leadstatus">Lead Status:{{contact.leadstatus}}</div>
+		<div class="" ng-if="contact.contactsource">Contact Source:{{contact.contactsource}}</div>
+		<div class="" ng-if="contact.lastcontactdate">Last Contact:{{contact.lastcontactdate}}</div>
+	</div>
+	<div class="item">
+		<!--<button class="button button-block" ng-click="newTask(contact.id);">New Task for {{contact.firstname}} {{contact.lastname}}</button>-->
+
+		<md-button class="md-raised md-warn" style="width:80%; margin-left:10%" ng-click="newTask(contact.id);">New Task for {{contact.firstname}} {{contact.lastname}}</md-button>
+
+	</div>
+	</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+/* Empty. Add your own CSS if you like */
+.addbutton{ width:50px !important;text-align: center; position: fixed; bottom: 15px; height: 50px !important; right:20px; min-width: 50px !important; }
+.findbutton{text-align: center; margin-left: 40px;}
+.addicon{text-align: center;  margin-top: -25px; margin-left: -20px; background-size: 50px !important;}
+.inputsearch{margin-top:43px;width: calc(100vw - 110px); width: -webkit-calc(100vw - 110px); }
+.inputsearch1{margin-left: 30px}
+
+.bar.bar-stable{background: #0080ff; }
+
+.bar.bar-stable .title{color : white;}
+.bar-stable .button.button-clear{color: white;}

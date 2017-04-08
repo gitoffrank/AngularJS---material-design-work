@@ -1,0 +1,75 @@
+<ion-view view-title="Open House">
+  <ion-content>
+    
+    <button ng-if="!showNew && !isOpen" class="button button-block button-positive" ng-click="showOpenHouse();">New Open House</button>
+    
+    <div ng-if="showNew">
+      <form>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="MLS Number" ng-model="open.mls">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Address" ng-model="open.address">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+          Or, select a property
+          </div>
+          <select name="property" ng-model="open.property">
+            <option value=""></option>
+          <option ng-repeat="property in properties" value="{{property.idproperty}}">
+            {{property.address1}} {{property.zip}}
+          </option>
+          </select>
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="open.pass">
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password Again" ng-model="open.validate">
+        </label>
+      </div>
+      <button class="button button-block button-positive" ng-click="newOpenHouse()">New Open House</button>
+      </form>
+	  </div>
+	  
+	  <div ng-if="isOpen">
+	    <div class="list list-inset">
+        <div class="item item-text-wrap text-left">
+        Address: {{open.address}}<br/>
+        MLS: {{open.mls}}<br/>
+        Or, Property ID: {{open.property}}
+        </div>
+        <div class="item item-text-wrap" ng-if="open.questions.length > 0">
+          <strong>Custom Questions</strong>
+          <div class="text-left" ng-repeat="question in open.questions"><i class="button-icon ion-close" ng-click="deleteQuestion($index)"></i> {{question.text}} <span ng-if="question.required">*</span></div>
+        </div>
+	  	</div>
+	  	
+		  <div class="list list-inset">
+    		<label class="item item-input">
+				  <span class="input-label">Question</span>
+				  <input type="text" placeholder="When do you plan on purchasing?" ng-model="newQuestion.text">    
+			  </label>
+			  <label class="item item-input">
+			    <span class="input-label">Required</span>
+          <label class="toggle toggle-assertive">
+            <input type="checkbox" ng-model="newQuestion.required">
+            <div class="track">
+            <div class="handle"></div>
+            </div>
+          </label>
+			  </label>
+  		</div>
+    	<button class="button button-block" ng-click="addQuestion()"> Add Question </button>
+	  	
+	  	<button class="button button-block button-positive" ng-click="closeOpenHouse();">Close Open House</button>
+    </div>
+    
+
+  </ion-content>
+<ion-footer-bar align-title="center" class="bar-stable">
+	  <h1 class="title" ng-click="goLDC();">Back to LionDesk Connect</h1>
+</ion-footer-bar>
+</ion-view>

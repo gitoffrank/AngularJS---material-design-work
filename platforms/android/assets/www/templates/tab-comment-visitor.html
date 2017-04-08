@@ -1,0 +1,15 @@
+<ion-view view-title="Visitor Comments"> 
+  <ion-content class="padding">
+    <form>
+     <div class="list list-inset">
+     	<label class="item">
+  	 		Add a comment for {{visitor.firstname}} {{visitor.lastname}}
+     	</label>
+		<label class="item item-input">
+			<input type="text" placeholder="Comment" ng-model="visitor.comment">
+		</label>
+      </div>
+      <button class="button button-block button-positive" ng-click="submitNewComment('{{visitor.id}}')">Submit</button>
+	  </form>
+  </ion-content>
+</ion-view>
